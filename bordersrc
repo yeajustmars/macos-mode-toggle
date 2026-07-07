@@ -1,0 +1,25 @@
+#!/bin/bash
+
+NOW=$(date -u +'%Y-%m-%dT%H:%M:%SZ')
+CURRENT_MODE=$(defaults read -g AppleInterfaceStyle 2>/dev/null)
+
+if [ "$CURRENT_MODE" = "Dark" ]; then
+    ACTIVE_COLOR="0xff1e1e24"
+    INACTIVE_COLOR="0xff1e1e24"
+else
+    ACTIVE_COLOR="0xffFFFFFF"
+    INACTIVE_COLOR="0xffFFFFFF"
+fi
+
+echo "$NOW [$CURRENT_MODE] ACTIVE_COLOR=$ACTIVE_COLOR INACTIVE_COLOR=$INACTIVE_COLOR" >> /tmp/appearance-changes.log
+
+options=(
+    style=square
+    order=above
+    width=3.0
+    hidpi=off
+    active_color="$ACTIVE_COLOR"
+    inactive_color="$INACTIVE_COLOR"
+)
+
+borders "${options[@]}"
