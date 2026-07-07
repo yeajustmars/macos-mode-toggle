@@ -15,4 +15,4 @@ I will maybe circle back and make a sort of installer or dynamic variable resolu
 2. Add com.user.appearancechange.plist in `~/Library/LaunchAgents` and enable it.
 3. Insatll `bordersrc` to `~/.config/borders/bordersrc`
 3. Set a light and dark mode in your `~/.config/ghostty/config.ghostty` file
-4. Edit shell script to match your Neovim themes
+4. Edit shell script to match your Neovim themes, paths, etc
